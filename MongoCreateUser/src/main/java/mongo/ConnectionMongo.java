@@ -15,13 +15,13 @@ public class ConnectionMongo {
 
 	public void ConnectMongo(){
 		try{
-			//conexi髇 a mongodb formato URI
+			//conexi贸n a mongodb formato URI
 			//mongodb://user1@host1/?authSource=$external&authMechanism=PLAIN
 			String db = "admin";
-			String host = "cre.unileon.es";
+			String host = "";
 			int port = 3306;//default
-			String user = "admin";
-			String password = "root";
+			String user = "";
+			String password = "";
 
 			uri = new MongoClientURI("mongodb://"+user+":"+password+"@"+host+":"+port+"/?authSource=$external&authMechanism=PLAIN");
 			
@@ -31,18 +31,18 @@ public class ConnectionMongo {
 			//se guarda la base de datos para utilizarla despues a la hora de insertar documentos
 			database = mongoClient.getDatabase(db);
 			
-			System.out.println("La conexi髇 con " + database.getName() +" fue establecida.");
+			System.out.println("La conexi贸n con " + database.getName() +" fue establecida.");
 	    } catch (MongoException e) {
-	    	System.out.println("Fallo conexi髇 con mongodb "+ database.getName() +"!"+e);
+	    	System.out.println("Fallo conexi贸n con mongodb "+ database.getName() +"!"+e);
 	    }
 	}
 	
 	public void DisConnect(){
 		try {
 			mongoClient.close();
-			System.out.println("Se ha cerrado la conexi髇 con mongodb "+ database.getName());
+			System.out.println("Se ha cerrado la conexi贸n con mongodb "+ database.getName());
 		} catch (MongoException e) {
-			System.out.println("Fallo desconexi髇 con mongodb "+ database.getName() +"!"+e);
+			System.out.println("Fallo desconexi贸n con mongodb "+ database.getName() +"!"+e);
 		}
 	
 	}
