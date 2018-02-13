@@ -15,9 +15,9 @@ public class CreateSingleUser {
         public static void main(String[] args) {
         	
             Hashtable<String, String> env = new Hashtable<String, String>();
-            String url = "ldap://cre.unileon.es:389";
+            String url = ""; //url ldap
             String rootdn = "cn=admin,dc=ldap,dc=com";
-            String rootpass = "root";
+            String rootpass = "";
  
  
              //Properties env = new Properties();
